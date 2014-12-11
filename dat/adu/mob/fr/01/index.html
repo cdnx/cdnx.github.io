@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta content="user-scalable=false; initial-scale=1.0; maximum-scale=1.0" name="viewport">
+<title>Adult Only</title>
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+<link rel="stylesheet" href="screen.css">
+</head>
+<body style="zoom: 1;">
+<div class="all-wrap">
+<div class="header">
+<img src="girl-bg.jpg" alt="">
+</div>
+<div id="content">
+<div class="content-top-block"></div>
+<div class="all-content">
+<h1 class="nice-slogan">Ce site est susceptible de contenir des photos explicites de personnes que vous connaissez.</h1>
+<div class="txt-information">
+Il y a 46 femmes inscrites dans un rayon de <span>15 kilomètres autour de votre localisation.</span> <br>
+Ces femmes ne recherchent QUE des rencontres sexuelles sans suite. <br>
+Vous avez de la chance, le formulaire d’inscription est actuellement ouvert pendant encore <span id="javascript_countdown_time"><span>04 minutes et 31 secondes</span></span>.
+Nous vous demandons juste de répondre à 3 questions simples afin de voir si vous vous qualifiez pour notre site web exclusif. Bonne chance!
+</div>
+<div id="first-step" style="">
+<div class="question1"><span>Question 1:</span> Avez-vous plus de 30 ans?</div>
+<div class="buttons">
+<a id="btn-no">NON</a>
+<a id="btn-yes">OUI</a>
+</div>
+</div>
+<div id="second-step" style="display:none;">
+<div class="question1"><span>Question 2:</span> Avez-vous jamais contracté une maladie sexuellement transmissible?</div>
+<div class="buttons">
+<a id="btn-no-second">NON</a>
+<a id="btn-yes-second">OUI</a>
+</div>
+</div>
+<div id="third-step" style="display:none;">
+<div class="question1"><span>Question 3:</span> Utiliseriez-vous un préservatif lors d’un rapport sexuel avec une partenaire rencontrée sur notre site?</div>
+<div class="buttons">
+<a id="btn-no-third">NON</a>
+<a id="btn-yes-third">OUI</a>
+</div>
+</div>
+<div id="fourth-step" style="display:none;">
+<div class="container-check">
+<img id="loading" src="loading.gif" alt="">
+<h1 id="access">Bravo ! Vous êtes admis sur notre site.</h1>
+<ul>
+<li id="first"><span>Notre base de données cherche les profils compatibles</span></li>
+<li id="second"><span>Sur base de vos réponses, 9 371 femmes se trouvent à proximité de vous.</span></li>
+<li id="third"><span>Votre inscription reçoit un avis favorable.</span></li>
+<li id="fourth"><span>Veuillez prendre connaissance de nos 3 règles!</span></li>
+</ul>
+</div>
+<div id="rules">
+<div class="rules-block">
+<h1 class="rules-title">Avant tout inscription, vous devez accepter les règles suivantes:</h1>
+<ul>
+<li class="first"><span>Si vous tombez sur quelqu’un que vous connaissez, il vous est interdit de rendre cela public. Vous ne devez pas colporter de rumeurs.</span></li>
+<li class="second"><span>Lors de vos rapports sexuels avec l’une de nos membres, VOUS avez la responsabilité de vous protéger contre les maladies sexuellement transmissibles.</span></li>
+<li class="third"><span>Respectez les désirs sexuels des autres inscrits. Nos utilisateurs sont des femmes normales, pas des prostituée ni des actrices pornos.</span></li>
+</ul>
+</div>
+<div class="i-agree">
+<h3>Tout manquement à ces règles occasionnera une suppression immédiate de votre compte ! Si vous acceptez toutes les règles énoncées ci-dessus, cliquez sur le bouton « J’accepte » ci-dessous pour continuer vers la page d’inscription.</h3>
+<a id="agree" href="http://tracker.com-ads.co/click">J’accepte</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(function() {
+	$('#btn-yes').click(function() {
+			step2 ();
+			return false;
+	});
+	$('#btn-no').click(function() {
+			step2 ();
+			return false;
+	});
+	$('#btn-yes-second').click(function() {
+	    step3 ();
+	    return false;
+	});
+	$('#btn-no-second').click(function() {
+	    step3 ();
+	    return false;
+	});
+	$('#btn-yes-third').click(function() {
+	    super_show ();
+	    return false;
+	});
+	$('#btn-no-third').click(function() {
+	    super_show ();
+	    return false;
+	});
+});
+
+function step2 () {
+	$('#first-step').hide();
+	$('#second-step').show();
+}
+function step3 () {
+	$('#second-step').hide();
+	$('#third-step').show();
+}
+function super_show () {
+  $('#third-step').hide();
+  $('#fourth-step').show();
+  document.getElementById('content').className +='active';
+  setTimeout("document.getElementById('first').className +='alpha'", 1000);
+  setTimeout("document.getElementById('second').className +='alpha'", 2000);
+  setTimeout("document.getElementById('third').className +='alpha'", 3000);
+  setTimeout("document.getElementById('fourth').className +='alpha'", 4000);
+  setTimeout("document.getElementById('rules').className +='alpha'", 4500);
+  setTimeout("document.getElementById('loading').style.display='none'", 4000);
+  setTimeout("document.getElementById('access').style.opacity='1'", 4000);
+
+}
+ </script>
+<script>
+/* TIMER */
+var javascript_countdown = function () {
+        var time_left = 10; //number of seconds for countdown
+        var keep_counting = 1;
+        var no_time_left_message = 'few seconds';
+        function countdown() {
+            if(time_left < 2) {
+                keep_counting = 0;
+            }
+            time_left = time_left - 1;
+        }
+        function add_leading_zero( n ) {
+            if(n.toString().length < 2) {
+                return '0' + n;
+            } else {
+                return n;
+            }
+        }
+        function format_output() {
+            var hours, minutes, seconds;
+            seconds = time_left % 60;
+            minutes = Math.floor(time_left / 60) % 60;
+            hours = Math.floor(time_left / 3600);
+            seconds = add_leading_zero( seconds );
+            minutes = add_leading_zero( minutes );
+            hours = add_leading_zero( hours );
+            return minutes + ' minutes et ' + seconds + ' secondes';
+        }
+        function show_time_left() {
+            document.getElementById('javascript_countdown_time').innerHTML = '<span>' + format_output() + '</span>';//time_left;
+        }
+        function no_time_left() {
+            document.getElementById('javascript_countdown_time').innerHTML = no_time_left_message;
+        }
+        return {
+            count: function () {
+                countdown();
+                show_time_left();
+            },
+            timer: function () {
+                javascript_countdown.count();
+                if(keep_counting) {
+                    setTimeout("javascript_countdown.timer();", 1000);
+                } else {
+                    no_time_left();
+                }
+            },
+            init: function (n) {
+                time_left = n;
+                javascript_countdown.timer();
+            }
+        };
+    }();
+    javascript_countdown.init(290);
+/* TIMER END */
+</script>
+</body></html>
