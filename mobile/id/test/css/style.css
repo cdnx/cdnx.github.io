@@ -1,0 +1,91 @@
+.console-wrapper {
+  padding:1rem;
+}
+.console {
+  background-color: #000;
+  color:#fff;
+  font-family: "Courier New", Courier, monospace;
+
+}
+.err {
+  color: #f00;
+
+  -webkit-animation-name: blinker;
+  -webkit-animation-duration: 1.5s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+
+  -moz-animation-name: blinker;
+  -moz-animation-duration: 1.5s;
+  -moz-animation-timing-function: linear;
+  -moz-animation-iteration-count: infinite;
+
+  animation-name: blinker;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+@keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.0; }
+  100% { opacity: 1.0; }
+}
+
+.button-wrapper {
+  padding:1rem 0 2rem 0;
+}
+
+.notice {
+    text-transform:uppercase;
+    color:#f00;
+}
+
+body {
+  font-size:.7rem;
+}
+h1 {
+  font-size:2.5rem;
+}
+h3 {
+  font-size:1.8rem;
+}
+
+@media only screen and (min-width : 320px) {
+  body {
+    font-size:.7rem;
+  }
+  h1 {
+    font-size:2.5rem;
+  }
+  h3 {
+    font-size:1.8rem;
+  }
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+  body {
+    font-size:.4rem;
+  }
+  h1 {
+    font-size:2.3rem;
+  }
+  h3 {
+    font-size:1.5rem;
+  }
+
+}

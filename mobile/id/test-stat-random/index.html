@@ -1,0 +1,152 @@
+	<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lander 2</title>
+		<link rel="stylesheet" type="text/css" href="holo-base-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-ics-dark-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-base-widgets.css" />
+		<link rel="stylesheet" type="text/css" href="holo-ics-dark-widgets.css" />
+		<style type="text/css">
+			h4 {
+				text-transform: uppercase;
+				font-size: 90%;
+				margin: 0;
+				padding: 4px 8px;
+				border-bottom-style: solid;
+				border-bottom-width: 1px;
+				border-bottom-color: #262626;
+				border-bottom-color: rgba(255, 255, 255, 0.15);
+				color: rgba(255, 255, 255, 0.75);
+			}
+
+			.pad {
+				padding:.5rem 1rem!important;
+			}
+
+			.err {
+				text-transform: uppercase;
+				color: #f00;
+
+				-webkit-animation-name: blinker;
+				-webkit-animation-duration: 1.5s;
+				-webkit-animation-timing-function: linear;
+				-webkit-animation-iteration-count: infinite;
+
+				-moz-animation-name: blinker;
+				-moz-animation-duration: 1.5s;
+				-moz-animation-timing-function: linear;
+				-moz-animation-iteration-count: infinite;
+
+				animation-name: blinker;
+				animation-duration: 1.5s;
+				animation-timing-function: linear;
+				animation-iteration-count: infinite;
+			}
+
+			@-moz-keyframes blinker {
+				0% { opacity: 1.0; }
+				50% { opacity: 0.0; }
+				100% { opacity: 1.0; }
+			}
+
+			@-webkit-keyframes blinker {
+				0% { opacity: 1.0; }
+				50% { opacity: 0.0; }
+				100% { opacity: 1.0; }
+			}
+
+			@keyframes blinker {
+				0% { opacity: 1.0; }
+				50% { opacity: 0.0; }
+				100% { opacity: 1.0; }
+			}
+
+		</style>
+
+
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="shortcut icon" sizes="128x128" href="icon_128.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="icon_128.png" />
+	</head>
+	<body>
+		<header class="holo-actionBar" style="text-align:center">
+			<span class="holo-title errx">
+				<!--img src="icon_48.png" /-->
+				 WARNING: Low Physical Memory!
+			</span>
+		</header>
+		<p>
+		</p>
+		<!-- h4>Demos</h4-->
+		<div style="padding:2rem 0 0 0">
+			<ul class="holo-list">
+				<li class="pad">
+					Handles: <span class="h">48595</span>
+				</li>
+				<li class="pad">
+					Threads: <span class="t">2012</span>
+				</li>
+				<li class="pad">
+					Processes: <span class="p">19</span>
+				</li>
+				<li class="pad">
+					Commit: <span class="c">1</span>
+				</ul>
+		</div>
+
+		<div class="click1">
+			<p>
+				Your phone is running out of memory. This will cause the phone to crash.
+			</p>
+			<p style="text-align:center">
+				<button class="click2">Fix problem now!</button>
+			</p>
+		</div>
+
+		<script type="text/javascript" src="holo-touch.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<script>
+			$(document).ready(function() {
+
+				$('.click1').click(function(){
+					window.location.href = "http://google.com";
+					return false;
+				});
+
+				$('.click2').click(function(){
+					window.location.href = "http://yahoo.com";
+					return false;
+				});
+
+				setInterval(function() {
+					var t = 48121 + Math.floor(Math.random() * 1000);
+					$('.h').text(t);
+				},
+				500);
+
+				setInterval(function() {
+					var t = 2012 + Math.floor(Math.random() * 500);
+					$('.t').text(t);
+				},
+				1500);
+
+				setInterval(function() {
+					var t = 10 + Math.floor(Math.random() * 9);
+					$('.p').text(t);
+				},
+				1000);
+
+				setInterval(function() {
+					var t = 1 + Math.floor(Math.random() * 20);
+					$('.c').text(t);
+				},
+				750);
+			});
+		</script>
+	</body>
+</html>
