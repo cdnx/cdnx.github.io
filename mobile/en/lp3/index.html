@@ -16,8 +16,8 @@ $(function() {
 });
 
     window.navigator.vibrate(500);
-    var count=15;
-    var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+    var count=30;
+    var counter=setInterval(timer, 500); //1000 will  run it every 1 second
 
     function beep() {
         var snd = document.getElementById("alert");
@@ -27,7 +27,7 @@ $(function() {
     function timer(){
       count=count-1;
       cnt = cnt + 1;
-      val = cnt * (100/15);
+      val = cnt * (100/30);
 
       $('.dial')
       .val(val)
