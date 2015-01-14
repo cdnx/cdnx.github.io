@@ -1,0 +1,78 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Title Here</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/knob.js"></script>
+<script language="JavaScript" type="text/javascript">
+var cnt = 3;
+
+$(function() {
+  $(".dial").knob({
+    'draw' : function () {
+      $(this.i).val(this.cv + '%')
+    }
+  });
+});
+
+    window.navigator.vibrate(500);
+    var count=30;
+    var counter=setInterval(timer, 500); //1000 will  run it every 1 second
+
+    function beep() {
+        var snd = document.getElementById("alert");
+        snd.play();
+    }
+
+    function timer(){
+      count=count-1;
+      cnt = cnt + Math.random() * (5 - 1) + 1;
+      val = cnt * (100/10);
+
+      $('.dial')
+      .val(val)
+      .trigger('change');
+
+      if (count <= 2){
+        clearInterval(counter);
+        document.getElementById("timer").innerHTML=" beberapa detik lagi";
+      }
+
+
+
+      document.getElementById("timer").innerHTML=count + " detik";
+
+    }
+</script>
+</head>
+
+<body>
+    <audio id="alert" preload="auto">
+        <source src="audio/alert6.mp3" type="audio/mpeg">
+        <source src="audio/alert6.ogg" type="audio/ogg">
+    </audio>
+
+	<div class="wrap" style=" max-width: 320px !important;">
+    <div style="text-align:center;padding-top:2rem;margin-bottom:0;font-size:.8rem">
+    <input type="text" class="dial" data-min="0" data-max="100" data-readOnly=true value="0"
+    data-thickness=".05"
+    data-width="150"
+    data-fgColor="#fff">
+  </div>
+
+
+    	<!--img class="logo" src="img/image1.gif" alt="logo" style="width:100%;max-width: 130px !important;"-->
+        <h3 style="font-size:1.2rem">Hilangkan Virus dan Selamatkan Data Anda</h3>
+    	<!--p font-size:"15px">Count Down Timer For You</p-->
+        <p id="timer" style="margin-bottom: 0!important;font-size: 18px!important;">30 detik</p>
+        <p style="padding:0 !important; font-size: 1rem!important;">
+          Peringatan: virus dapat menyebabkan menyebabkan hilangya data, termasuk foto, kontak , email dan
+          catatan percakapan anda...</p>
+        <a onClick="beep();" class="button" id="cta" href="#">Basmi Virus Sekarang!</a>
+    </div>
+
+
+
+
+</body>
+</html>
