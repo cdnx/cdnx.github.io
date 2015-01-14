@@ -2,10 +2,10 @@
 <title>Title Here</title>
 <link href="css/style.css" rel="stylesheet" type="text/css">
 <meta name="viewport" content="initial-scale=1">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/knob.js"></script>
+<!--script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+<!--script src="js/knob.js"></script-->
 <script language="JavaScript" type="text/javascript">
-var cnt = 3;
+/*var cnt = 3;
 
 $(function() {
   $(".dial").knob({
@@ -13,7 +13,7 @@ $(function() {
       $(this.i).val(this.cv + '%')
     }
   });
-});
+});*/
 
     window.navigator.vibrate(500);
     var count=30;
@@ -29,9 +29,9 @@ $(function() {
       cnt = cnt + Math.random() * (5 - 1) + 1;
       val = cnt * (100/10);
 
-      $('.dial')
+      /*$('.dial')
       .val(val)
-      .trigger('change');
+      .trigger('change');*/
 
       if (count <= 2){
         clearInterval(counter);
