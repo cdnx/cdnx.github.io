@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Title Here</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/knob.js"></script>
+<script language="JavaScript" type="text/javascript">
+var cnt = 100;
+$(function() {
+  $(".dial").knob();
+});
+
+    window.navigator.vibrate(500);
+    var count=30;
+    var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
+
+    function beep() {
+        var snd = document.getElementById("alert");
+        snd.play();
+    }
+
+    function timer(){
+      count=count-1;
+      cnt = cnt + 1;
+
+      if (count <= 2){
+        clearInterval(counter);
+        document.getElementById("timer").innerHTML="few seconds";
+
+      }
+
+      $('.dial')
+      .val(cnt)
+      .trigger('change');
+      document.getElementById("timer").innerHTML=count + " seconds";
+
+    }
+</script>
+</head>
+
+<body>
+    <audio id="alert" preload="auto">
+        <source src="audio/alert6.mp3" type="audio/mpeg">
+        <source src="audio/alert6.ogg" type="audio/ogg">
+    </audio>
+
+	<div class="wrap" style=" max-width: 320px !important;">
+    <div style="text-align:center">
+    <input type="text" class="dial" data-min="100" data-max="128" data-readOnly=true value="0">
+  </div>
+
+
+    	<!--img class="logo" src="img/image1.gif" alt="logo" style="width:100%;max-width: 130px !important;"-->
+        <h3>Your Header Here</h3>
+    	<p font-size:"15px">Count Down Timer For You</p>
+        <p id="timer" style="margin-bottom: 0!important;font-size: 18px!important;">30 seconds</p>
+        <p style="padding:0 !important; font-size: 20px!important;">Press "CTA" and perform the action on the next page.</p>
+        <a onClick="beep();" class="button" id="cta" href="#">CTA</a>
+    </div>
+
+
+
+
+</body>
+</html>
