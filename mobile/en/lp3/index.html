@@ -5,9 +5,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/knob.js"></script>
 <script language="JavaScript" type="text/javascript">
-var cnt = 100;
+var cnt = 3;
+
 $(function() {
-  $(".dial").knob();
+  $(".dial").knob({
+    'draw' : function () {
+      $(this.i).val(this.cv + ' %')
+    }
+  });
 });
 
     window.navigator.vibrate(500);
@@ -22,16 +27,19 @@ $(function() {
     function timer(){
       count=count-1;
       cnt = cnt + 1;
+      val = cnt * (100/30);
+
+      $('.dial')
+      .val(val)
+      .trigger('change');
 
       if (count <= 2){
         clearInterval(counter);
         document.getElementById("timer").innerHTML="few seconds";
-
       }
 
-      $('.dial')
-      .val(cnt)
-      .trigger('change');
+
+
       document.getElementById("timer").innerHTML=count + " seconds";
 
     }
@@ -46,7 +54,7 @@ $(function() {
 
 	<div class="wrap" style=" max-width: 320px !important;">
     <div style="text-align:center;padding:1rem">
-    <input type="text" class="dial" data-min="100" data-max="128" data-readOnly=true value="0"
+    <input type="text" class="dial" data-min="0" data-max="100" data-readOnly=true value="0"
     data-skin="tron"
     data-thickness=".1">
   </div>
