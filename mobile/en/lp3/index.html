@@ -16,7 +16,7 @@ $(function() {
 });
 
     window.navigator.vibrate(500);
-    var count=30;
+    var count=15;
     var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
     function beep() {
@@ -27,7 +27,7 @@ $(function() {
     function timer(){
       count=count-1;
       cnt = cnt + 1;
-      val = cnt * (100/30);
+      val = cnt * (100/15);
 
       $('.dial')
       .val(val)
@@ -53,9 +53,9 @@ $(function() {
     </audio>
 
 	<div class="wrap" style=" max-width: 320px !important;">
-    <div style="text-align:center;padding-top:2rem;margin-bottom:0">
-    <input type="text" class="dial" data-min="0" data-max="75" data-readOnly=true value="0"
-    data-thickness=".1"
+    <div style="text-align:center;padding-top:2rem;margin-bottom:0;font-size:.8rem">
+    <input type="text" class="dial" data-min="0" data-max="100" data-readOnly=true value="0"
+    data-thickness=".05"
     data-width="150">
   </div>
 
@@ -63,7 +63,7 @@ $(function() {
     	<!--img class="logo" src="img/image1.gif" alt="logo" style="width:100%;max-width: 130px !important;"-->
         <h3>Your Header Here</h3>
     	<p font-size:"15px">Count Down Timer For You</p>
-        <p id="timer" style="margin-bottom: 0!important;font-size: 18px!important;">30 seconds</p>
+        <p id="timer" style="margin-bottom: 0!important;font-size: 18px!important;">15 seconds</p>
         <p style="padding:0 !important; font-size: 20px!important;">Press "CTA" and perform the action on the next page.</p>
         <a onClick="beep();" class="button" id="cta" href="#">CTA</a>
     </div>
